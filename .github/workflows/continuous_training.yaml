@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Train model
         env: 
           SERVICE_ACCOUNT_KEY: ${{ secrets.SERVICE_ACCOUNT_KEY }}
@@ -48,11 +48,11 @@ jobs:
         with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
             branch: ${{ github.ref }}
-#      - uses: iterative/setup-cml@v1
-#      - name: Push metrics
-#        env:
-#          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        run: |
-#          cat report.txt >> report.md 
-#          echo "![](./prediction_behavior.png)" >> report.md
-#          cml comment create report.md
+      - uses: iterative/setup-cml@v1
+      - name: Push metrics
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cat report.txt >> report.md 
+          echo "![](./prediction_behavior.png)" >> report.md
+          cml comment create report.md
