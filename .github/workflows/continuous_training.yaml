@@ -55,7 +55,6 @@ jobs:
         run: |
           cat report.txt >> report.md
           echo '![](./prediction_behavior.png "Title")' >> report.md
-          cml comment create report.md --publish
-#          echo '![](./reports/lift_curve_train.png "Train lift curve")' >> report.md
+          cml comment create report.md
 #          echo "![](./prediction_behavior.png)" >> report.md
 #          cml comment create report.md 
