@@ -11,12 +11,24 @@ on:
         description: Why to run this?
         required: false
         default: running CT
+#permissions:
+#  id-token: write # need this for OIDC  
+#  contents: write
+#  pull-requests: write 
+#  issues: read
+#  packages: none
 permissions:
   id-token: write # need this for OIDC  
+  actions: write
+  checks: write
   contents: write
-  pull-requests: write 
-  issues: read
-  packages: none
+  deployments: write
+  issues: write
+  packages: write
+  pull-requests: write
+  repository-projects: write
+  security-events: write
+  statuses: write
 jobs:
   continuous-training:
     runs-on: ubuntu-latest
