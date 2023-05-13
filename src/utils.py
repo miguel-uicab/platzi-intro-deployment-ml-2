@@ -20,9 +20,9 @@ def save_simple_metrics_report(train_score: float, test_score: float, validation
         report_file.write(f'### Validation Score: {validation_score}'+'\n')
 
 def get_model_performance_test_set(y_real: pd.Series, y_pred: pd.Series) ->None:
-    fig, ax = plt.subplots()
-    fig.set_figheight(8)
-    fig.set_figwidth(8)
+    fig, ax = plt.subplots(figsize=(8, 8))
+    # fig.set_figheight(8)
+    # fig.set_figwidth(8)
     sns.regplot(x=y_pred, y=y_real, ax = ax)
     ax.set_xlabel('Predicted worldwide gross')
     ax.set_ylabel('Real worldwide gross')
