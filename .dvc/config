@@ -1,0 +1,6 @@
+[core]
+    remote = model-track
+['remote "dataset-track"']
+    url = gs://model-dataset-track/dataset
+['remote "model-track"']
+    url = gs://model-dataset-track/model
